@@ -1,4 +1,4 @@
-# coordinates2country
+# coordinates2country-android
 
 What country is at a particular latitude/longitude? This Android library tells you in 100 milliseconds, without using the Internet and without requiring any permission.
 
@@ -13,7 +13,7 @@ For the Java desktop/server version, see https://github.com/coordinates2country/
 
 If using Gradle:
 ```
-implementation("io.github.coordinates2country:coordinates2country:1.2")
+implementation("io.github.coordinates2country:coordinates2country-android:1.2")
 ```
 
 For other build systems or for the JAR, search for the latest version on [Maven Central](https://search.maven.org/artifact/io.github.coordinates2country/coordinates2country/1.2/jar).
