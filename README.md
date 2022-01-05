@@ -9,6 +9,8 @@ For the Java desktop/server version, see https://github.com/coordinates2country/
 
 # Use
 
+This [sample Android app that uses the library](https://github.com/coordinates2country/sample-android) might help.
+
 ## 1) Import the library
 
 If using Gradle:
