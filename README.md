@@ -15,7 +15,7 @@ This [sample Android app that uses the library](https://github.com/coordinates2c
 
 If using Gradle:
 ```
-implementation("io.github.coordinates2country:coordinates2country-android:1.2")
+implementation("io.github.coordinates2country:coordinates2country-android:1.2") { exclude group: 'com.google.android', module: 'android' }
 ```
 
 For other build systems or for the JAR, search for the latest version on [Maven Central](https://search.maven.org/artifact/io.github.coordinates2country/coordinates2country/1.2/jar).
