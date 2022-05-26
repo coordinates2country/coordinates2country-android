@@ -33,7 +33,7 @@ If you prefer identifiers, `Coordinates2Country.countryQID(-23.7, 39.8)` returns
 
 # Build
 
-Run `./gradlew build`, or `./build.sh` if you modified anything in the `data` folder.
+Run `./gradlew build -x test`, or `./build.sh` if you modified anything in the `data` folder.
 
 # Generate the gray map
 

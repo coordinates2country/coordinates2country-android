@@ -26,6 +26,10 @@ java {
     withSourcesJar()
 }
 
+compileJava {
+    options.compilerArgs.addAll(['--release', '8'])
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
