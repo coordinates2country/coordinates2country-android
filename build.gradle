@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.google.android', name: 'android', version: '1.5_r3'
+    implementation group: 'com.google.android', name: 'android', version: '1.5_r3'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'

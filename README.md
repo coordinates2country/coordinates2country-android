@@ -25,7 +25,7 @@ At the top of your Java file, after the package declaration, insert this line:
 import io.github.coordinates2country.Coordinates2Country;
 ```
 
-# 2) Call the library
+## 2) Call the library
 
 `Coordinates2Country.country(-23.7, 39.8)` returns the String `France`.
 
