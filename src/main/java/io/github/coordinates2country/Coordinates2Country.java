@@ -66,7 +66,7 @@ public class Coordinates2Country {
         Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
 
         String country = nearestCountry(x, y, wikidataOrNot, bitmap);
-        System.out.println("For latitude=" + latitude + " longitude=" + longitude + " (x=" + x + " y=" + y + ") found country " + country);
+        //System.out.println("For latitude=" + latitude + " longitude=" + longitude + " (x=" + x + " y=" + y + ") found country " + country);
         return country;
     }
 
@@ -91,7 +91,7 @@ public class Coordinates2Country {
      * Distance is currently not implemented as real radius, but as a rectangle.
      */
     private static String countryAtDistance(int centerX, int centerY, int radius, boolean wikidataOrNot, Bitmap bitmap) {
-        System.out.println("radius=" + radius);
+        //System.out.println("radius=" + radius);
         int x1 = centerX - radius;
         int x2 = centerX + radius;
         int y1 = centerY - radius;
@@ -145,7 +145,7 @@ public class Coordinates2Country {
     private static String countryFromPixel(int x, int y, boolean wikidataOrNot, Bitmap bitmap) {
         int color = bitmap.getPixel(x, y); // A number that contains all channels.
         int grayshade = Color.blue(color); // Could also take green or red.
-        System.out.println("Color for x=" + x + " y=" + y + ": " + color + " Color.red:" + Color.red(grayshade));
+        //System.out.println("Color for x=" + x + " y=" + y + ": " + color + " Color.red:" + Color.red(grayshade));
         return countryFromGrayshade(grayshade, wikidataOrNot);
    }
 
