@@ -1,6 +1,6 @@
 # coordinates2country-android
 
-What country is at a particular latitude/longitude? This Android library tells you in 100 milliseconds, without using the Internet and without requiring any permission.
+What country is at a particular latitude/longitude? This Android library tells you in 50 milliseconds, without using the Internet and without requiring any permission.
 
 - Fast reverse geocoding
 - Never needs an Internet connection
