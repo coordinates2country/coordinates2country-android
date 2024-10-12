@@ -8,14 +8,12 @@ import java.io.File;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import java.io.InputStream;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-//import java.awt.image.BufferedImage;
-//import javax.imageio.ImageIO;
 
 /**
  * Converts coordinates (example: 50.1, 10.2) into a country identifier (example: "Germany").
