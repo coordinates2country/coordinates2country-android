@@ -1,19 +1,16 @@
 package io.github.coordinates2country;
 
-import java.util.Collections;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.HashMap;
-import java.io.File;
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.InputStreamReader;
-
-import java.io.InputStream;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Converts coordinates (example: 50.1, 10.2) into a country identifier (example: "Germany").
@@ -95,8 +92,8 @@ public class Coordinates2Country {
         int y1 = centerY - radius;
         int y2 = centerY + radius;
         Map<String, Integer> countriesOccurrences = new HashMap<>(); // Key: Country, Value: Number of occurrences of that country in the pixels at said distance.
-       
-        // Horizontal parts of the rectangle. 
+
+        // Horizontal parts of the rectangle.
         for (int x = x1; x <= x2; x++) {
             for (int y = y1; y <= y2; y += y2 - y1) { // y1 then y2 then end the loop.
             //System.out.println("vertical, radius=" + radius + " x=" + x + " y=" +y);
@@ -110,7 +107,7 @@ public class Coordinates2Country {
                 }
            }
         }
-        // Vertical parts of the rectangle, excluding corners. 
+        // Vertical parts of the rectangle, excluding corners.
         for (int y = y1 + 1; y <= y2 - 1; y++) {
             for (int x = x1; x <= x2; x += x2 - x1) { // x1 then x2 then end the loop.
             //System.out.println("horizontal, radius=" + radius + " x=" + x + " y=" +y);
@@ -141,11 +138,20 @@ public class Coordinates2Country {
      * Finds the country under a given pixel.
      */
     private static String countryFromPixel(int x, int y, boolean wikidataOrNot, Bitmap bitmap) {
-        int color = bitmap.getPixel(x, y); // A number that contains all channels.
-        int grayshade = Color.blue(color); // Could also take green or red.
+        int grayshade = 0;
+        int color = 0;
+
+        if (x < bitmap.getWidth() && y < bitmap.getHeight()) {
+			color = bitmap.getPixel(x, y); // A number that contains all channels.
+		}
+		else {
+			System.err.println("countryFromPixel: x ("+ x +") must be < bitmap width (" + bitmap.getWidth() + ") and y (" + y + ") must be < bitmap height (" + bitmap.getHeight() + ")");
+		}
+
+        grayshade = Color.blue(color);
         //System.out.println("Color for x=" + x + " y=" + y + ": " + color + " Color.red:" + Color.red(grayshade));
         return countryFromGrayshade(grayshade, wikidataOrNot);
-   }
+    }
 
     /**
      * Finds the country represented by a given gray shade.
